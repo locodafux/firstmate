@@ -2303,6 +2303,19 @@ The runner proves exactly one durability boundary: output that reached the runne
 
 `docs/verification/process-event-sources.md` holds the measurements and `.agents/skills/process-event-sources/SKILL.md` owns the handling procedure.
 
+## Chat bridge (config/chat-bridge.env)
+
+The optional bridge in [`docs/chat-bridge.md`](chat-bridge.md) reads one local, gitignored file, `config/chat-bridge.env`, of `KEY=value` lines (blank lines and `#` comments are ignored).
+An environment variable of the same name overrides the file for one run, and a missing required key refuses with the file path.
+
+| Key | Holds |
+| --- | --- |
+| `SUPABASE_URL` | Project URL of the chat's Supabase backend, required. |
+| `SUPABASE_SERVICE_ROLE_KEY` | Service-role key, required; it bypasses row security, so keep the file private. |
+| `POLL_SECS` | Seconds between polls, `10` when unset. |
+
+The bridge keeps its reply cursor and, under launchd, its log in `state/chat-bridge/`.
+
 ## Spoken interface and captain inbox (config/voice-*, config/inbox-*)
 
 The spoken interface in [`docs/voice-relay.md`](voice-relay.md) and the model-backed subcommands of `bin/fm-inbox.sh` reach a paid API in a named account, so no region, model id or AWS profile is shipped as a tracked default.

@@ -301,6 +301,10 @@
       "audience": "maintainer-architecture"
     },
     {
+      "path": "docs/chat-bridge.md",
+      "audience": "operator-current"
+    },
+    {
       "path": "docs/calm-mode-feasibility.md",
       "audience": "maintainer-verification"
     },
@@ -335,6 +339,10 @@
     {
       "path": "docs/extension-bindings.md",
       "audience": "maintainer-architecture"
+    },
+    {
+      "path": "docs/examples/chat-bridge.plist",
+      "audience": "operator-example"
     },
     {
       "path": "docs/examples/crew-dispatch.json",
